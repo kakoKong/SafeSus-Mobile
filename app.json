@@ -1,30 +1,46 @@
 {
   "expo": {
-    "name": "SafeSus-Mobile",
-    "slug": "SafeSus-Mobile",
+    "name": "SafeSusr",
+    "slug": "safesus-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
-    "newArchEnabled": true,
+    "icon": "./assets/safesusWithIcon.png",
+    "userInterfaceStyle": "automatic",
+    "scheme": "safesus-mobile",
     "splash": {
-      "image": "./assets/splash-icon.png",
+      "image": "./assets/safesusWithIcon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.safesus.mobile",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "SafeSus needs your location to show nearby safety warnings and determine which safety zone you're in.",
+        "NSLocationAlwaysUsageDescription": "SafeSus needs background location access to alert you about nearby safety issues while you travel."
+      }
     },
     "android": {
+      "package": "com.safesus.mobile",
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/logo_noname.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION"
+      ]
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/logo_noname.png"
+    },
+    "extra": {
+      "apiUrl": "https://safesus.app/api",
+      "supabaseUrl": "https://qcvmjyawrlhdzlczypaf.supabase.co",
+      "supabaseAnonKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFjdm1qeWF3cmxoZHpsY3p5cGFmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjA4MDQ4MTIsImV4cCI6MjA3NjM4MDgxMn0.7PTbHViV42sN3Hr0WTZ4jZV2_NWdcIvVXek60sJLWGI"
+    },
+    "plugins": [
+      "expo-location"
+    ]
   }
 }
